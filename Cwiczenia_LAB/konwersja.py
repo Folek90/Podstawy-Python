@@ -30,4 +30,4 @@ while choice:
         except:
             print('you need to enter a number')
     else:
-        print('========= END =======')
+        print('============================ END ==========================')
