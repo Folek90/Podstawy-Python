@@ -13,5 +13,5 @@ else:
     print('File %s created' % path)
     '''
 
-result = os.path.isfile(path)
+result = os.path.isfile(path) or open(path, 'x').close()
 print(result)
