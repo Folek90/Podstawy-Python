@@ -1,0 +1,17 @@
+Using Python 3.4 I'm getting the following error when trying to decode a byte type using utf-32
+
+Traceback (most recent call last):
+  File "c:.\SharqBot.py", line 1130, in <module>
+    fullR=s.recv(1024).decode('utf-32').split('\r\n')
+UnicodeDecodeError: 'utf-32-le' codec can't decode bytes in position 0-3: codepoint not in range(0x110000)
+and the following when trying to decode it into utf-16
+
+  File "c:.\SharqBot.py", line 1128, in <module>
+    fullR=s.recv(1024).decode('utf-16').split('\r\n')
+UnicodeDecodeError: 'utf-16-le' codec can't decode byte 0x0a in position 374: truncated data
+When I decode using utf-8 there is no error. s is a socket connected to the twitch IRC server irc.chat.twitch.tv on port 80.
+
+It receives the following:
+
+b':tmi.twitch.tv 001 absolutelyabot :Welcome, GLHF!\r\n:tmi.twitch.tv 002 absolutelyabot :Your host is tmi.twitch.tv\r\n:tmi.twitch.tv 003 absolutelyabot :This server is rather new\r\n:tmi.twitch.tv 004 absolutelyabot :-\r\n:tmi.twitch.tv 375 absolutelyabot :-\r\n:tmi.twitch.tv 372 absolutelyabot :You are in a maze of twisty passages, all alike.\r\n:tmi.twitch.tv 376 absolutelyabot :>\r\n'
+Am I doing something wrong when trying to decode to utf 16 and 32? The reason I want to use utf-32 is because occasionally someone sends a character that is not in utf-8 and I want to be able to recieve that instead of it throwing an error because utf-8 does not support that character. Thanks for any help.

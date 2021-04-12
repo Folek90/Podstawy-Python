@@ -32,10 +32,10 @@ print('====================================================')
 """
 
 days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']
-print('days: ', days)
+print('days:', days)
 workdays = days.copy()
 workdays.remove('sat')
 workdays.remove('sun')
-print('workdays: ', workdays)
+print('workdays:', workdays)
 print(id(days), id(workdays))
 
