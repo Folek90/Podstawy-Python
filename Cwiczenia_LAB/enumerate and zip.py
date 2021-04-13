@@ -51,5 +51,4 @@ print('=========================================================================
 
 for i, (p, d, l) in enumerate(zip(projects, dates, leaders)):
     print('{} - The leader of "{}" started {} is {}'.format(i+1, p, d, l))
-
-    
+     
